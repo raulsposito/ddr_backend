@@ -1,7 +1,7 @@
 class Api::V1::PlayerController < ApplicationController
     
-    def new
-        @player = Player.new
+    def create
+        @player = Player.new(player_params)
     end
 
     def index
@@ -12,6 +12,12 @@ class Api::V1::PlayerController < ApplicationController
     def show
         player = Player.find_by(id: params[:id])
         render json: player
+    end
+
+    private 
+
+    def player_params
+        params.require(:player).permit(:name)
     end
 
 end

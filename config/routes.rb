@@ -3,13 +3,13 @@ Rails.application.routes.draw do
 
   namespace :api do 
     namespace :v1 do 
-      resources :player, only: [:new, :index, :show]
+      resources :player, only: [:create, :index, :show]
     end
   end
 
   namespace :api do 
     namespace :v1 do
-      resources :game, only: [:new, :index, :show]
+      resources :game, only: [:create, :index, :show]
     end
   end
 
