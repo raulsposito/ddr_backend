@@ -1,7 +1,8 @@
 class Api::V1::PlayerController < ApplicationController
     
     def create
-        @player = Player.new(player_params)
+        player = Player.create(player_params)
+        render json: player
     end
 
     def index
