@@ -2,6 +2,9 @@ class Api::V1::GameController < ApplicationController
 
     def create
         game = Game.new(game_params)
+        #binding.pry
+        game.player_id = Player.all.last.id
+        game.save
     end
 
     def index
